@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CrudUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-=======
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
 
 Route::get('home', [CrudUserController::class, 'home'])->name('home');
@@ -25,5 +25,5 @@ Route::get('signup', [CrudUserController::class, 'signup'])->name('signup');
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('crud.home');
 });

@@ -15,7 +15,7 @@ class CrudUserController extends Controller
     {
         return view('crud.home');
     }
-
+    
     // Login
     public function login()
     {
@@ -36,30 +36,5 @@ class CrudUserController extends Controller
         }
 
         return redirect("login")->withSuccess('Login details are not valid');
-    }
-
-    // SignUp
-    public function signUp()
-    {
-        return view('crud.signup');
-    }
-
-    public function postUser(Request $request)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'password1' => 'required|min:6',
-            'password2' => 'required|min:6|same:password1', // kiểm tra mật khẩu 2 khớp nhau
-        ]);
-
-        $data = $request->all();
-        $check = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password1'])
-        ]);
-
-        return redirect("list")->withSuccess('Bạn đã đăng nhập thành công');
     }
 }

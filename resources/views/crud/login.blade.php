@@ -64,16 +64,6 @@
         border: none;
         cursor: pointer;
     }
-
-    .card-end {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .card-end .create-account {
-        color: blue;
-        text-decoration: none;
-    }
 </style>
 
 
