@@ -47,19 +47,19 @@ class CrudUserController extends Controller
     public function postUser(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'username' => 'required',
             'email' => 'required|email|unique:users',
-            'password1' => 'required|min:6',
-            'password2' => 'required|min:6|same:password1', // xác thực 2=1
+            'password1' => 'required|min:4',
+            'password2' => 'required|min:4|same:password1', // xác thực p2=p1
         ]);
 
         $data = $request->all();
         $check = User::create([
-            'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password1'])
         ]);
 
-        return redirect("list")->withSuccess('Đăng nhập thành công');
+        return redirect("list")->withSuccess('Đăng Ký thành công');
     }
 }
