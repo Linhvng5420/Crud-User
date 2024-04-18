@@ -27,8 +27,6 @@ Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postU
 Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
 Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 
-
-
 Route::get('/', function () {
     return view('crud.home');
 });

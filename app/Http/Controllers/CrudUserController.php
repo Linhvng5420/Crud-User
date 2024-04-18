@@ -72,7 +72,7 @@ class CrudUserController extends Controller
             return view('crud.list', ['users' => $users]);
         }
 
-        return redirect("login")->withSuccess('Lổi truy xuất cập!');
+        return redirect("login")->withSuccess('Lổi truy cập!');
     }
 
     // Delete
