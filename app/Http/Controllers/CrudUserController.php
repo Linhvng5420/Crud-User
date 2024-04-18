@@ -67,10 +67,11 @@ class CrudUserController extends Controller
     public function listUser()
     {
         if (Auth::check()) {
-            $users = User::all();
+            // Phân trang với 3 người dùng trên mỗi trang
+            $users = User::paginate(3);
             return view('crud.list', ['users' => $users]);
         }
 
-        return redirect("login")->withSuccess('Lổi truy xuất cập!');
+        return redirect("login")->withSuccess('Lỗi truy cập!');
     }
 }

@@ -1,7 +1,6 @@
 @extends('dashboard')
 
 @section('content')
-
 <section class="user-list">
     <div class="container">
         <h2>Danh sách user</h2>
@@ -17,25 +16,20 @@
             <tbody>
                 @foreach ($users as $user)
                 <tr>
-                    <th>{{ $user->id }}</th>
-                    <th>{{ $user->username }}</th>
-                    <th>{{ $user->email }}</th>
-
-                    <th>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->username }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>
                         <a href="#">View</a> |
                         <a href="#">Edit</a> |
                         <a href="#">Delete</a>
-                    </th>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
         <div class="pagination">
-            <a href="#">Previous</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">Next</a>
+            {!! $users->links() !!}
         </div>
     </div>
 </section>
