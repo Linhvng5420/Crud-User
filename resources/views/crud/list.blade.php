@@ -21,9 +21,9 @@
                     <th>{{ $user->email }}</th>
 
                     <th>
-                        <a href="#">View</a> |
+                        <a href="{{ route('user.viewUser', ['id' => $user->id]) }}">View</a> |
                         <a href="#">Edit</a> |
-                        <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
+                        <a href="#">Delete</a>
                     </th>
                 </tr>
                 @endforeach
