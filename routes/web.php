@@ -27,6 +27,8 @@ Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postU
 Route::get('list', [CrudUserController::class, 'listUser'])->name('user.list');
 Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 
+Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
+Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
 
 
 Route::get('/', function () {
