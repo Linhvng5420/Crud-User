@@ -16,14 +16,15 @@
             <tbody>
                 @foreach ($users as $user)
                 <tr>
-                    <td>{{ $user->id }}</td>
-                    <td>{{ $user->username }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>
+                    <th>{{ $user->id }}</th>
+                    <th>{{ $user->username }}</th>
+                    <th>{{ $user->email }}</th>
+
+                    <th>
                         <a href="#">View</a> |
                         <a href="#">Edit</a> |
-                        <a href="#">Delete</a>
-                    </td>
+                        <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
+                    </th>
                 </tr>
                 @endforeach
             </tbody>
