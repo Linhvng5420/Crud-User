@@ -22,7 +22,7 @@
 
                     <th>
                         <a href="#">View</a> |
-                        <a href="#">Edit</a> |
+                        <a href="{{ route('user.updateUser', ['id' => $user->id]) }}">Update</a> |
                         <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
                     </th>
                 </tr>

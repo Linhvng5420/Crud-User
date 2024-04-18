@@ -83,4 +83,33 @@ class CrudUserController extends Controller
 
         return redirect("list")->withSuccess('Delete Done');
     }
+
+    // Update
+    public function updateUser(Request $request)
+    {
+        $user_id = $request->get('id');
+        $user = User::find($user_id);
+        return view('crud.update', ['user' => $user]);
+    }
+    public function postUpdateUser(Request $request)
+    {
+        $user_id = $request->get('id');
+
+        $request->validate([
+            'username' => 'required',
+            'email' => 'required|email|unique:users,email,' . $user_id,
+            'newpassword1' => 'required|min:4',
+            'newpassword2' => 'required|min:4|same:newpassword1', // xác thực p2=p1
+        ]);
+
+        $user = User::find($user_id);
+    
+        $user->username = $request->get('username');
+        $user->email = $request->get('email');
+        $user->password = Hash::make($request->get('newpassword1'));
+
+        $user->save();
+
+        return redirect("list")->withSuccess('Đã cập nhật');
+    }
 }
