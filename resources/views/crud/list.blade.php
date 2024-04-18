@@ -28,6 +28,7 @@
                 @endforeach
             </tbody>
         </table>
+        
         <div class="pagination">
             {!! $users->links() !!}
         </div>
@@ -85,14 +86,19 @@
 
     .pagination a {
         color: #000;
-        padding: 5px 10px;
+        padding: 5px;
         text-decoration: none;
         border: 1px solid #ddd;
-        margin: 0 5px;
+        margin: 5px;
     }
 
     .pagination a.active {
         background-color: #ddd;
+    }
+
+    .pagination svg {
+        height: 15px;
+        width: 30px;
     }
 </style>
 
