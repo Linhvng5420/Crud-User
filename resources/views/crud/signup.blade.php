@@ -67,15 +67,19 @@
             <div class="input-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required autofocus>
+                @if ($errors->has('username'))
+                <span class="text-danger">{{ $errors->first('username') }}</span>
+                @endif
+
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password1" name="password" required>
+                <input type="password" id="password1" name="password1" required>
             </div>
 
             <div class="input-group">
                 <label for="password">Password Again</label>
-                <input type="password" id="password2" name="password" required>
+                <input type="password" id="password2" name="password2" required>
             </div>
 
             <div class="input-group">
