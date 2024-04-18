@@ -90,7 +90,7 @@
             <button type="submit" class="btn-login">Đăng Ký</button>
 
             <div>
-                <a href="#" class="login">Đã Có Tài Khoản</a>
+                <a href="{{ route('login') }}" class="login">Đã Có Tài Khoản</a>
             </div>
         </form>
     </div>
