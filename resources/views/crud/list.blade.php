@@ -24,7 +24,7 @@
                     <th>
                         <a href="#">View</a> |
                         <a href="#">Edit</a> |
-                        <a href="#">Delete</a>
+                        <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
                     </th>
                 </tr>
                 @endforeach
