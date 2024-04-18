@@ -13,12 +13,16 @@ use App\Http\Controllers\CrudUserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
 
 Route::get('home', [CrudUserController::class, 'home'])->name('home');
 
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
+
+Route::get('signup', [CrudUserController::class, 'signup'])->name('signup');
+Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postUser');
 
 Route::get('/', function () {
     return view('crud.home');
