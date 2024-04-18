@@ -60,6 +60,6 @@ class CrudUserController extends Controller
             'password' => Hash::make($data['password1'])
         ]);
 
-        return redirect("list")->withSuccess('Đăng Ký thành công');
+        return redirect("login")->withSuccess('Đăng Ký thành công');
     }
 }

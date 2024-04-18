@@ -18,6 +18,9 @@ Route::get('dashboard', [CrudUserController::class, 'dashboard']);
 
 Route::get('home', [CrudUserController::class, 'home'])->name('home');
 
+Route::get('login', [CrudUserController::class, 'login'])->name('login');
+Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
+
 Route::get('signup', [CrudUserController::class, 'signup'])->name('signup');
 Route::post('signup', [CrudUserController::class, 'postUser'])->name('user.postUser');
 
