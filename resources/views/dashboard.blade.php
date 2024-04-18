@@ -30,7 +30,7 @@
 
     footer {
       display: grid;
-      margin: 5% 5%;
+      margin: 0% 5%;
       padding: 1%;
       border: 1px solid black;
       justify-items: center;
@@ -41,8 +41,8 @@
 <body>
 
   <nav class="navbar">
-    <a href="#home">Home</a>
-    <a href="#login">Đăng nhập</a>
+    <a href="{{ route('home') }}">Home</a>
+    <a href="{{ route('login') }}">Đăng nhập</a>
     <a href="#register">Đăng ký</a>
   </nav>
 
