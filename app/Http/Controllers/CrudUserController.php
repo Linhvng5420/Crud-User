@@ -62,4 +62,15 @@ class CrudUserController extends Controller
 
         return redirect("login")->withSuccess('Đăng Ký thành công');
     }
+
+    // List
+    public function listUser()
+    {
+        if (Auth::check()) {
+            $users = User::all();
+            return view('crud.list', ['users' => $users]);
+        }
+
+        return redirect("login")->withSuccess('Lổi truy xuất cập!');
+    }
 }
