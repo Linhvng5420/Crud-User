@@ -30,7 +30,7 @@
 
     footer {
       display: grid;
-      margin: 0% 5%;
+      margin: 1% 5%;
       padding: 1%;
       border: 1px solid black;
       justify-items: center;

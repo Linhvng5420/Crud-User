@@ -29,29 +29,18 @@
     }
 
     .input-group input[type="text"],
-    .input-group input[type="password"] {
+    .input-group input[type="password"],
+    .input-group input[type="email"] {
         width: 90%;
         padding: 10px;
         border: 1px solid #ccc;
     }
 
-    .remember-forgot {
-        display: flex;
-        justify-content: space-between;
+    .login {
+        display: grid;
+        justify-content: center;
         align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .remember-forgot .checkbox-label {
-        display: flex;
-        align-items: center;
-    }
-
-    .remember-forgot .checkbox-label input[type="checkbox"] {
-        margin-right: 5px;
-    }
-
-    .remember-forgot .forgot-password {
+        margin-top: 15px;
         color: blue;
         text-decoration: none;
     }
@@ -63,6 +52,7 @@
         color: white;
         border: none;
         cursor: pointer;
+        font-size: x-large;
     }
 </style>
 
@@ -70,9 +60,9 @@
 <section class="login-form">
     <div class="card-login">
         <div class="card-title">
-            <h1>Màn hình đăng nhập</h1>
+            <h1>Màn hình đăng ký</h1>
         </div>
-        <form method="POST" action="{{ route('user.authUser') }}" class="card-body">
+        <form method="POST" action="{{ route('user.postUser') }}" class="card-body">
             @csrf
             <div class="input-group">
                 <label for="username">Username</label>
@@ -80,15 +70,24 @@
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password 1" name="password" required>
             </div>
-            <div class="remember-forgot">
-                <label class="checkbox-label">
-                    <input type="checkbox" name="remember"><span>Ghi nhớ đăng nhập</span>
-                </label>
-                <a href="#" class="forgot-password">Quên mật khẩu?</a>
+
+            <div class="input-group">
+                <label for="password">Password Again</label>
+                <input type="password" id="password 2" name="password" required>
             </div>
-            <button type="submit" class="btn-login">Đăng nhập</button>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <button type="submit" class="btn-login">Đăng Ký</button>
+
+            <div>
+                <a href="#" class="login">Đã Có Tài Khoản</a>
+            </div>
         </form>
     </div>
 </section>
