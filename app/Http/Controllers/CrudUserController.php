@@ -24,15 +24,15 @@ class CrudUserController extends Controller
     public function authUser(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required',
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
             return redirect()->intended('list')
-                ->withSuccess('Signed in');
+                ->withSuccess('Đăng nhập thành công');
         }
 
         return redirect("login")->withSuccess('Đăng Nhập Thất Bại!');
