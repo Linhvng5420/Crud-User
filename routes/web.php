@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-<<<<<<< Updated upstream
+
 =======
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
 
@@ -23,7 +23,6 @@ Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUs
 
 Route::get('signup', [CrudUserController::class, 'signup'])->name('signup');
 
->>>>>>> Stashed changes
 
 Route::get('/', function () {
     return view('welcome');
