@@ -70,12 +70,12 @@
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password 1" name="password" required>
+                <input type="password" id="password1" name="password" required>
             </div>
 
             <div class="input-group">
                 <label for="password">Password Again</label>
-                <input type="password" id="password 2" name="password" required>
+                <input type="password" id="password2" name="password" required>
             </div>
 
             <div class="input-group">
