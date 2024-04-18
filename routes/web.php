@@ -30,6 +30,7 @@ Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.dele
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
 
+Route::get('viewUser', [CrudUserController::class, 'viewUser'])->name('user.viewUser');
 
 Route::get('/', function () {
     return view('crud.home');

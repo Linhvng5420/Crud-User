@@ -75,13 +75,13 @@ class CrudUserController extends Controller
         return redirect("login")->withSuccess('Lổi truy cập!');
     }
 
-    // Delete
-    public function deleteUser(Request $request)
+    // View
+    public function viewUser(Request $request)
     {
         $user_id = $request->get('id');
-        $user = User::destroy($user_id);
+        $user = User::find($user_id);
 
-        return redirect("list")->withSuccess('Delete Done');
+        return view('crud.view', ['user' => $user]);
     }
 
     // Update

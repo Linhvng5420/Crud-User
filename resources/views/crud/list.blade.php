@@ -21,7 +21,7 @@
                     <th>{{ $user->email }}</th>
 
                     <th>
-                        <a href="#">View</a> |
+                        <a href="{{ route('user.viewUser', ['id' => $user->id]) }}">View</a> |
                         <a href="{{ route('user.updateUser', ['id' => $user->id]) }}">Update</a> |
                         <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}">Delete</a>
                     </th>
