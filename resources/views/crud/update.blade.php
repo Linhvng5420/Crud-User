@@ -6,7 +6,7 @@
         <div class="card-title">
             <h1>Màn hình cập nhật</h1>
         </div>
-        <form method="POST" action="{{ route('user.postUpdateUser', ['id' => $user->id]) }}" class="card-body">
+        <form method="POST" action="{{ route('user.postUpdateUser', ['id' => $user->id]) }}" class="card-body" enctype="multipart/form-data">
             @csrf
             <div class="input-group">
                 <label for="username">Username</label>
@@ -29,12 +29,12 @@
             </div>
 
             <div class="input-group">
-                <label for="avata">Avatar</label>
-                <input type="file" name="avata" id="avata" class="form-control">
-                <img src="{{asset('images/'.$user->avata)}}" width="70px" height="70px" alt="Avatar.png">
+                <label for="image">Avata Image</label>
+                <input type="file" id="image" name="image">
             </div>
 
             <button type="submit" class="btn-update">Cập Nhật</button>
+
         </form>
     </div>
 </section>
