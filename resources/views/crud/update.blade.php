@@ -1,49 +1,52 @@
 @extends('dashboard')
 
 @section('content')
-<section class="login-form">
-    <div class="card-login">
+<section class="update-form">
+    <div class="card-update">
         <div class="card-title">
-            <h1>Màn hình đăng ký</h1>
+            <h1>Màn hình cập nhật</h1>
         </div>
-        <form method="POST" action="{{ route('user.postUser') }}" class="card-body">
+        <form method="POST" action="{{ route('user.postUpdateUser', ['id' => $user->id]) }}" class="card-body" enctype="multipart/form-data">
             @csrf
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" required autofocus>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password1" name="password1" required>
-            </div>
-
-            <div class="input-group">
-                <label for="password">Password Again</label>
-                <input type="password" id="password2" name="password2" required>
+                <input type="text" id="username" name="username" value="{{ $user->username }}" required autofocus>
             </div>
 
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="{{ $user->email }}" required>
             </div>
 
-            <button type="submit" class="btn-login">Đăng Ký</button>
-
-            <div>
-                <a href="{{ route('login') }}" class="login">Đã Có Tài Khoản</a>
+            <div class="input-group">
+                <label for="password">New Password</label>
+                <input type="password" id="newpassword1" name="newpassword1" required>
             </div>
+
+            <div class="input-group">
+                <label for="password">New Password Again</label>
+                <input type="password" id="newpassword2" name="newpassword2" required>
+            </div>
+
+            <div class="input-group">
+                <label for="image">Avata Image</label>
+                <input type="file" id="image" name="image">
+            </div>
+
+            <button type="submit" class="btn-update">Cập Nhật</button>
+
         </form>
     </div>
 </section>
 
 <style>
-    .login-form {
+    .update-form {
         width: 100%;
         max-width: 400px;
         margin: auto;
     }
 
-    .card-login {
+    .card-update {
         border: 1px solid #ccc;
         padding: 20px;
         margin-top: 50px;
@@ -80,7 +83,7 @@
         text-decoration: none;
     }
 
-    .btn-login {
+    .btn-update {
         width: 100%;
         padding: 10px;
         background-color: blue;
@@ -90,4 +93,5 @@
         font-size: x-large;
     }
 </style>
+
 @endsection
