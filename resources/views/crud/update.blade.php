@@ -6,7 +6,7 @@
         <div class="card-title">
             <h1>Màn hình cập nhật</h1>
         </div>
-        <form method="POST" aaction="{{ route('user.postUpdateUser', ['id' => $user->id]) }}" class="card-body">
+        <form method="POST" action="{{ route('user.postUpdateUser', ['id' => $user->id]) }}" class="card-body" enctype="multipart/form-data">
             @csrf
             <div class="input-group">
                 <label for="username">Username</label>
@@ -28,7 +28,13 @@
                 <input type="password" id="newpassword2" name="newpassword2" required>
             </div>
 
+            <div class="input-group">
+                <label for="image">Avata Image</label>
+                <input type="file" id="image" name="image">
+            </div>
+
             <button type="submit" class="btn-update">Cập Nhật</button>
+
         </form>
     </div>
 </section>

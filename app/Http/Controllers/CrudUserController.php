@@ -6,6 +6,7 @@ use Hash;
 use Session;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 
 class CrudUserController extends Controller
@@ -94,19 +95,27 @@ class CrudUserController extends Controller
     public function postUpdateUser(Request $request)
     {
         $user_id = $request->get('id');
+        $user = User::find($user_id);
 
         $request->validate([
             'username' => 'required',
             'email' => 'required|email|unique:users,email,' . $user_id,
             'newpassword1' => 'required|min:4',
             'newpassword2' => 'required|min:4|same:newpassword1', // xác thực p2=p1
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // validate image
         ]);
 
-        $user = User::find($user_id);
-    
         $user->username = $request->get('username');
         $user->email = $request->get('email');
         $user->password = Hash::make($request->get('newpassword1'));
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/images');
+            $image->move($destinationPath, $imageName);
+            $user->profile_image = '/images/' . $imageName;
+        }
 
         $user->save();
 
