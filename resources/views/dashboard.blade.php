@@ -21,11 +21,13 @@
       color: black;
       text-decoration: none;
       padding: 10px 20px;
+      font-weight: bold;
     }
 
     .navbar a:hover {
       background-color: #ddd;
       color: black;
+      border-radius: 5px;
     }
 
     footer {
@@ -48,9 +50,10 @@
 
     @if (Auth::check())
     <a href="{{ route('listUser') }}">List User</a>
+    <a href="#" onclick="document.getElementById('logout-form').submit();">Đăng Xuất</a>
     @endif
 
-    <a href="#" onclick="document.getElementById('logout-form').submit();">Đăng Xuất</a>
+    
   </nav>
 
   <div class="content-yield">

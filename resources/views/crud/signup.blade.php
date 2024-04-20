@@ -28,7 +28,9 @@
                 <input type="password" id="password2" name="password2" required>
             </div>
 
-            <button type="submit" class="btn-login">Đăng Ký</button>
+            <div style="text-align: center;">
+                <button type="submit" class="btn-signup">Đăng Ký</button>
+            </div>
 
             <div>
                 <a href="{{ route('login') }}" class="login">Đã Có Tài Khoản</a>
@@ -81,14 +83,14 @@
         text-decoration: none;
     }
 
-    .btn-login {
-        width: 100%;
+    .btn-signup {
+        width: 60%;
         padding: 10px;
         background-color: blue;
         color: white;
         border: none;
         cursor: pointer;
-        font-size: x-large;
+        font-size: large;
     }
 </style>
 @endsection
