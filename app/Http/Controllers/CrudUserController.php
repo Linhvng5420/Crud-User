@@ -15,6 +15,7 @@ class CrudUserController extends Controller
     {
         return view('crud.login');
     }
+
     public function authUser(Request $request)
     {
         $request->validate([
@@ -115,5 +116,13 @@ class CrudUserController extends Controller
         return redirect("list")->withSuccess('Đã cập nhật');
     }
 
+    public function logout(Request $request)
+    {
+        Auth::logout();
+    
+        $request->session()->invalidate(); // Invalidate session data for extra security
+    
+        return redirect('login')->with('success', 'Đăng xuất thành công');
+    }
     
 }
