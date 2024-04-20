@@ -32,6 +32,7 @@ Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user
 
 Route::get('viewUser', [CrudUserController::class, 'viewUser'])->name('user.viewUser');
 
+
 Route::get('/', function () {
     return view('crud.home');
 });
