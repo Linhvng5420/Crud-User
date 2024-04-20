@@ -12,6 +12,12 @@
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required autofocus>
             </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
             <div class="input-group">
                 <label for="password">Password</label>
                 <input type="password" id="password1" name="password1" required>
@@ -20,11 +26,6 @@
             <div class="input-group">
                 <label for="password">Password Again</label>
                 <input type="password" id="password2" name="password2" required>
-            </div>
-
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
             </div>
 
             <button type="submit" class="btn-login">Đăng Ký</button>
