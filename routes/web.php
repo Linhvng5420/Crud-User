@@ -33,6 +33,7 @@ Route::get('viewUser', [CrudUserController::class, 'viewUser'])->name('user.view
 
 Route::post('/logout', [App\Http\Controllers\CrudUserController::class, 'logout'])->name('logout');
 
+
 Route::get('/', function () {
     return view('crud.login');
 });
