@@ -1,6 +1,39 @@
 @extends('dashboard')
 
 @section('content')
+
+<section class="login-form">
+    <div class="card-login">
+        <div class="card-title">
+            <h1>Màn Hình Đăng Nhập</h1>
+        </div>
+
+        <form method="POST" action="{{ route('user.authUser') }}" class="card-body">
+            @csrf
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required autofocus>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <!-- <div class="remember-forgot">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="remember"><span>Ghi nhớ đăng nhập</span>
+                </label>
+                <a href="#" class="forgot-password">Quên mật khẩu?</a>
+            </div> -->
+
+            <div style="text-align: center;">
+                <button type="submit" class="btn-login">Đăng nhập</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
 <style>
     .login-form {
         width: 100%;
@@ -40,6 +73,8 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 15px;
+        margin-right: 15px;
+        flex-direction: row-reverse;
     }
 
     .remember-forgot .checkbox-label {
@@ -57,40 +92,13 @@
     }
 
     .btn-login {
-        width: 100%;
+        width: 60%;
         padding: 10px;
         background-color: blue;
         color: white;
         border: none;
         cursor: pointer;
+        font-size: large;
     }
 </style>
-
-
-<section class="login-form">
-    <div class="card-login">
-        <div class="card-title">
-            <h1>Màn hình đăng nhập</h1>
-        </div>
-        <form method="POST" action="{{ route('user.authUser') }}" class="card-body">
-            @csrf
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required autofocus>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="remember-forgot">
-                <label class="checkbox-label">
-                    <input type="checkbox" name="remember"><span>Ghi nhớ đăng nhập</span>
-                </label>
-                <a href="#" class="forgot-password">Quên mật khẩu?</a>
-            </div>
-            <button type="submit" class="btn-login">Đăng nhập</button>
-        </form>
-    </div>
-</section>
-
 @endsection

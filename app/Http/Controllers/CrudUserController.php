@@ -10,17 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class CrudUserController extends Controller
 {
-    // Home
-    public function home()
-    {
-        return view('crud.home');
-    }
-
     // Đăng Nhập
     public function login()
     {
         return view('crud.login');
     }
+
     public function authUser(Request $request)
     {
         $request->validate([

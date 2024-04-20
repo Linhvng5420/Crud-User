@@ -21,11 +21,13 @@
       color: black;
       text-decoration: none;
       padding: 10px 20px;
+      font-weight: bold;
     }
 
     .navbar a:hover {
       background-color: #ddd;
       color: black;
+      border-radius: 5px;
     }
 
     footer {
@@ -41,9 +43,17 @@
 <body>
 
   <nav class="navbar">
-    <a href="{{ route('home') }}">Home</a>
-    <a href="{{ route('login') }}">Đăng nhập</a>
-    <a href="{{ route('signup') }}">Đăng ký</a>
+    @if (!Auth::check())
+    <a href="{{ route('login') }}">Đăng Nhập</a>
+    <a href="{{ route('signup') }}">Đăng Ký</a>
+    @endif
+
+    @if (Auth::check())
+    <a href="{{ route('listUser') }}">List User</a>
+    <a href="#" onclick="document.getElementById('logout-form').submit();">Đăng Xuất</a>
+    @endif
+
+    
   </nav>
 
   <div class="content-yield">
@@ -53,5 +63,4 @@
 
   <footer><strong>Team D</strong></footer>
 </body>
-
 </html>
