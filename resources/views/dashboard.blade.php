@@ -41,9 +41,16 @@
 <body>
 
   <nav class="navbar">
+    @if (!Auth::check())
     <a href="{{ route('login') }}">Đăng Nhập</a>
     <a href="{{ route('signup') }}">Đăng Ký</a>
-    <a href="#">Đăng Xuất</a>
+    @endif
+
+    @if (Auth::check())
+    <a href="{{ route('listUser') }}">List User</a>
+    @endif
+
+    <a href="#" onclick="document.getElementById('logout-form').submit();">Đăng Xuất</a>
   </nav>
 
   <div class="content-yield">
@@ -52,6 +59,10 @@
   </div>
 
   <footer><strong>Team D</strong></footer>
-</body>
 
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+  </form>
+
+</body>
 </html>
