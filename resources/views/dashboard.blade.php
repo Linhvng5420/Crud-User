@@ -41,7 +41,6 @@
 <body>
 
   <nav class="navbar">
-    <a href="{{ route('home') }}">Home</a>
     <a href="{{ route('login') }}">Đăng Nhập</a>
     <a href="{{ route('signup') }}">Đăng Ký</a>
     <a href="#">Đăng Xuất</a>

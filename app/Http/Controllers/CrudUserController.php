@@ -6,17 +6,10 @@ use Hash;
 use Session;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth;
 
 class CrudUserController extends Controller
 {
-    // Home
-    public function home()
-    {
-        return view('crud.home');
-    }
-
     // Đăng Nhập
     public function login()
     {
@@ -121,4 +114,6 @@ class CrudUserController extends Controller
 
         return redirect("list")->withSuccess('Đã cập nhật');
     }
+
+    
 }

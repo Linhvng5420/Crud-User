@@ -4,16 +4,24 @@
 <main>
     <div class="container">
         <h1>Thông tin người dùng</h1>
-        <form action="#">
+
+        <div style="text-align: center;">
+            <!-- Hien thi anh neu user da cap nhat avata -->
+            @if($user->profile_image)
+            <div class="form-group">
+                <img src="{{ $user->profile_image }}" alt="Profile Image" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%;">
+            </div>
+            @endif
+        </div>
+
+        <form action="">
             <div class="form-group">
                 <h3 for="username">UserName: {{ $user->username }}</h3>
             </div>
+
             <div class="form-group">
                 <h3 for="email">Email: {{ $user->email }}</h3>
             </div>
-            <a href="#">
-            <button type="submit">Chỉnh sửa</button>
-            </a>
         </form>
     </div>
 </main>
@@ -27,11 +35,10 @@
 
     .container {
         width: 500px;
-        height: 400px;
+        height: auto;
         margin: 30px auto;
         padding: 20px;
         border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
