@@ -46,6 +46,7 @@
     @if (!Auth::check())
     <a href="{{ route('login') }}">Đăng Nhập</a>
     <a href="{{ route('signup') }}">Đăng Ký</a>
+    <a href="#">Đăng xuất</a>
     @endif
 
     @if (Auth::check())
