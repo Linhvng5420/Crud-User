@@ -49,7 +49,7 @@
     @endif
 
     @if (Auth::check())
-    <a href="{{ route('listUser') }}">List User</a>
+    <a href="#">List User</a>
     <a href="#" onclick="document.getElementById('logout-form').submit();">Đăng Xuất</a>
     @endif
 
